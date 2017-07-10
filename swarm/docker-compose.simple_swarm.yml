@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  master:
+    image: appropriate/nc
+    ports:
+      - "3303:3306"
+    restart: unless-stopped
+    command: nc -lk 3306
+
+  slave:
+    image: appropriate/nc
+    depends_on:
+      - "master"
+    restart: unless-stopped
+    command: >
+      watch nc -vz -w 3 master 3306
+      &> /dev/null
+      && echo "Access: Success" || echo "Access: Failure"'
+    
