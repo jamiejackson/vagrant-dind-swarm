@@ -21,11 +21,11 @@ To SSH into the machine:
 
 `vagrant ssh`
 
-For the following commands, change to the shared vagrant directory:
+# Working with the Cluster/Stack
+
+For the following commands, be sure that you're in an SSH session in the Vagrant VM (see above), then change to the shared vagrant directory:
 
 `cd /vagrant/swarm`
-
-# Working with the Cluster/Stack
 
 ## start up local swarm cluster
 
