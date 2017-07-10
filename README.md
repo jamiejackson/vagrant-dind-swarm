@@ -4,6 +4,27 @@ I'm creating a repo so I might get some help with my problem.
 
 https://forums.docker.com/t/docker-swarm-docker-in-docker-container-communication/34425/2
 
+# Prerequisites
+
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (Vagrant can install VirtualBox if it's not already on your system.)
+
+# Working with Vagrant
+
+From the clone directory, issue:
+
+`vagrant up`
+
+To SSH into the machine:
+
+`vagrant ssh`
+
+For the following commands, change to the shared vagrant directory:
+
+`cd /vagrant/`
+
+# Working with the Cluster/Stack
+
 ## start up local swarm cluster
 
 ```
