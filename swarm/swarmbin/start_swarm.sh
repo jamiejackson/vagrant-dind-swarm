@@ -1,8 +1,28 @@
 #!/bin/bash
 
-set -x
-
+# based on: 
 # https://codefresh.io/blog/deploy-docker-compose-v3-swarm-mode-cluster/
+
+while :
+do
+    case $1 in
+        --advertise-addr=*)
+            advertise_addr=${1#*=}
+            shift
+            ;;
+        --) # End of all options
+            shift
+            break
+            ;;
+        -*)
+            echo "WARN: Unknown option (ignored): $1" >&2
+            shift
+            ;;
+        *)  # no more options. Stop while loop
+            break
+            ;;
+    esac
+done
 
 # vars
 [ -z "$NUM_WORKERS" ] && NUM_WORKERS=3
@@ -10,13 +30,10 @@ set -x
 # init swarm (need for service command); if not created
 docker node ls 2> /dev/null | grep "Leader"
 if [ $? -ne 0 ]; then
-  if [ -d /vagrant ]; then
-    # vagrant environment
-    # eth0 worked
-    # eth1 didn't work
-    docker swarm init --advertise-addr=eth0 # --listen-addr=0.0.0.0 #  10.0.2.15
-  else
+  if [ -z ${advertise_addr+x} ]; then
     docker swarm init
+  else
+    docker swarm init --advertise-addr="${advertise_addr}" # --listen-addr=0.0.0.0 #  10.0.2.15
   fi
 fi
 

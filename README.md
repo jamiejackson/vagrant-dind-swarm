@@ -21,14 +21,15 @@ To SSH into the machine:
 
 For the following commands, change to the shared vagrant directory:
 
-`cd /vagrant/`
+`cd /vagrant/swarm`
 
 # Working with the Cluster/Stack
 
 ## start up local swarm cluster
 
 ```
-swarmbin/start_swarm.sh
+# change the interface to try another; omit the option to use the default.
+swarmbin/start_swarm.sh --advertise-addr=eth0 
 ```
 
 ## visualize swarm
