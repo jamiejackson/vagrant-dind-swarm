@@ -1,3 +1,9 @@
+This isn't a full-fledged project. I'm just trying to get inter-container communication working in a Docker-in-Docker swarm running on Vagrant.
+
+I'm creating a repo so I might get some help with my problem.
+
+https://forums.docker.com/t/docker-swarm-docker-in-docker-container-communication/34425/2
+
 ## start up local swarm cluster
 
 ```
@@ -14,7 +20,9 @@ swarmbin/start_swarm.sh
 swarmbin/deploy.sh
 ```
 
-## watch slave's
+## watch slave's logs
+
+This shows whether communication is failing, or not.
 
 ```
 docker service logs --follow db_slave
@@ -31,15 +39,3 @@ swarmbin/undeploy.sh
 ```
 swarmbin/kill_swarm.sh
 ```
-
-</xmp>
-<!-- ================================================================================== -->
-<!-- DONT EDIT ANYTHING BELOW THIS POINT (unless you know what you are getting into...) -->
-<!-- ================================================================================== -->
-<!-- code for Strapdown (see http://strapdownjs.com ) -->
-<script src="https://cdn.rawgit.com/arturadib/strapdown/gh-pages/v/0.2/strapdown.js"></script>
-<!-- code for TOC (jquery plugin) (see http://projects.jga.me/toc/#toc0) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
-<script src="https://cdn.rawgit.com/zipizap/strapdown_template/master/js/init_TOC.js"></script>
-</html>
