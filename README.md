@@ -44,7 +44,7 @@ swarmbin/start_swarm.sh --advertise-addr=eth0
 swarmbin/deploy.sh
 ```
 
-## watch slave's logs
+## test - watch slave's logs
 
 This shows whether communication is failing, or not.
 
