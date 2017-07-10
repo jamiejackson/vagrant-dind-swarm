@@ -1,5 +1,7 @@
 This isn't a full-fledged project. I'm just trying to get inter-container communication working in a Docker-in-Docker swarm running on Vagrant.
 
+The goal is to get the `db_slave` service to be able to access the `db_master` on port 3306. (This works in Docker for Mac, but I can't get it working in Vagrant.)
+
 I'm creating a repo so I might get some help with my problem.
 
 https://forums.docker.com/t/docker-swarm-docker-in-docker-container-communication/34425/2
