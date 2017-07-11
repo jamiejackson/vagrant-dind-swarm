@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "swarm-dind"
   config.vm.box = "ubuntu/trusty64"
   config.vm.network :private_network, ip: "192.168.56.111"
-  config.vbguest.auto_update = false
+  # config.vbguest.auto_update = false
   
   # Set variables for use in provisioning
   vm_temp_dir = "/vagrant/temp"
